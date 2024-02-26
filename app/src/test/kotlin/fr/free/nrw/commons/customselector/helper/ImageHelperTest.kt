@@ -3,7 +3,8 @@ package fr.free.nrw.commons.customselector.helper
 import android.net.Uri
 import fr.free.nrw.commons.customselector.model.Folder
 import fr.free.nrw.commons.customselector.model.Image
-import org.junit.jupiter.api.Assertions.*
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.CoreMatchers.equalTo
 
 import org.junit.Test
 import org.mockito.Mockito.mock
@@ -26,7 +27,7 @@ internal class ImageHelperTest {
     @Test
     fun folderListFromImages() {
         val folderList = ArrayList<Folder>(listOf(Folder(1, "bucket1", folderImageList1), Folder(2, "bucket2", folderImageList2)))
-        assertEquals(folderList, ImageHelper.folderListFromImages(mockImageList))
+        assertThat(folderList, equalTo(ImageHelper.folderListFromImages(mockImageList)))
     }
 
     /**
@@ -34,7 +35,7 @@ internal class ImageHelperTest {
      */
     @Test
     fun filterImages() {
-        assertEquals(folderImageList1, ImageHelper.filterImages(mockImageList, 1))
+        assertThat(folderImageList1, equalTo(ImageHelper.filterImages(mockImageList, 1)))
     }
 
     /**
@@ -42,7 +43,7 @@ internal class ImageHelperTest {
      */
     @Test
     fun getIndex() {
-        assertEquals(1,ImageHelper.getIndex(mockImageList, folderImage2))
+        assertThat(1,equalTo(ImageHelper.getIndex(mockImageList, folderImage2)))
     }
 
     /**
@@ -50,6 +51,6 @@ internal class ImageHelperTest {
      */
     @Test
     fun getIndexList() {
-        assertEquals(ArrayList<Int>(listOf(0)), ImageHelper.getIndexList(mockImageList, folderImageList2))
+        assertThat(ArrayList<Int>(listOf(0)), equalTo(ImageHelper.getIndexList(mockImageList, folderImageList2)))
     }
 }
