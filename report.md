@@ -26,6 +26,9 @@ closely related test and convert the test cases to use assertThat instead. The r
 cases should not change a they should still succeed after the change this is the only requirement and
 that the new test uses assertThat.
 
+the team should use the following [link](https://hamcrest.org/JavaHamcrest/tutorial) to use get more 
+familiar with assertThat
+
 ## Onboarding experience
 
 Did you choose a new project or continue on the previous one?
