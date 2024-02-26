@@ -6,9 +6,9 @@ has to be delivered in a standard, cross-platform format.
 
 ## Project
 
-Name:
+Name: apps-android-commons (group 8) 
 
-URL:
+URL: https://github.com/commons-app/apps-android-commons
 
 One or two sentences describing it
 
@@ -44,9 +44,9 @@ you took care of and where you spent your time, if that time exceeds
 
 ## Overview of issue(s) and work done.
 
-Title:
+Title: Remove usages of assert 
 
-URL:
+URL: https://github.com/commons-app/apps-android-commons/issues/3463
 
 Summary in one or two sentences
 
