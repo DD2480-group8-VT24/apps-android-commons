@@ -12,6 +12,20 @@ URL: https://github.com/commons-app/apps-android-commons
 
 One or two sentences describing it
 
+This project is android app where you users can upload their pictures to the wikimedia commons
+
+## Project Plan
+
+The issues is that this project uses the Junit assert in their kotlin test but they want to upgrade 
+it to use appropriate AssertThat which comes from the (hamcrest dependency). The project has many 
+test cases roughly 1500 to be exact which means that to make this work many test cases has to be 
+rewritten. 
+
+The way we plan to do this is that we divide the work so that each person takes a separate folder of
+closely related test and convert the test cases to use assertThat instead. The result of the test 
+cases should not change a they should still succeed after the change this is the only requirement and
+that the new test uses assertThat.
+
 ## Onboarding experience
 
 Did you choose a new project or continue on the previous one?
