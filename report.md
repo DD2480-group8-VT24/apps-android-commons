@@ -94,7 +94,13 @@ URL: https://github.com/commons-app/apps-android-commons/issues/5284
 
 #### Summary
 
+This issue is about stopping automatic retries when a picture fails for a reason which obviously won't change when trying again, for example if it has an invalid filename. 
+
+Overview of how uploading photos work can be found [here](https://github.com/commons-app/commons-app-documentation/blob/master/android/Code-walkthrough-for-new-devs-(draft).md) under Uploading Pictures.
+
 #### Scope
+
+The scope of this issue is a bit difficult to predetermine as the upload functionality is spread out over more than 20 files, meaning that getting an overview of how it works is a significant task in it self.
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
