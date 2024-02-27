@@ -54,11 +54,14 @@ you took care of and where you spent your time, if that time exceeds
 
    **1 hour** - Initial analysis work for issue #3463, getting an understanding of the issue and solution (and the problem with having it as our main issue)
 
+   **1 hour** - Reading documentation related to issue #5284, more specifically how uploading works
+
 4. configuration and setup;
 
    **1 hour** - Getting the project and Android Studio to run
 
 5. analyzing code/output;
+   **1 hour** - Analysing how picture uploading works and how we can determine why an upload failed.
 
 6. writing documentation;
 
@@ -69,7 +72,7 @@ you took care of and where you spent your time, if that time exceeds
 
 8. running code?
 
-#### Total: 9 hours
+#### Total: 11 hours
 
 ## Overview of issue(s) and work done.
 
