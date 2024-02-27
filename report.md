@@ -106,8 +106,10 @@ The scope of this issue is a bit difficult to predetermine as the upload functio
 
 #### Requirements
 
-- Change behaviour of [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669) to stop if reason for failiur won't change (like invalid filepath).
-- This require us to have information on why the attempted failed at retryUpload, maybe through changing adding a value to [Contribution.state](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/Contribution.kt#L96) for genuine failiur, or a new field describing why it failed.
+- Change behaviour of [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669) to stop if reason for failure won't change (like invalid filepath).
+
+- This require us to have information on why the attempted failed at retryUpload, maybe through changing adding a value to [Contribution.state](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/Contribution.kt#L96) for genuine failure, or maybe we can use the field [hasInvalidLocation](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/Contribution.kt#L45) though this will only cover this specific case. Also we should really avoid changing contribution if we can avoid it as they store this object in a DB.
+
 - This the requires us to determine and save why the attempt failed, start looking in [contributionsPresenter.saveContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsPresenter.java#L69).
 
 - Finally we need documentation of any thing we do, JavaDocs and maybe in https://github.com/commons-app/commons-app-documentation, but that might be outdated. And unit tests of this functionality.
