@@ -96,13 +96,23 @@ URL: https://github.com/commons-app/apps-android-commons/issues/5284
 
 This issue is about stopping automatic retries when a picture fails for a reason which obviously won't change when trying again, for example if it has an invalid filename. 
 
-The main location to start looking is [here](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669), as well as more details can be found [here](https://github.com/commons-app/apps-android-commons/pull/5257#discussion_r1304662562).
+The main location to start looking is [here](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669), as well as more details can be found [here](https://github.com/commons-app/apps-android-commons/pull/5257#discussion_r1304662562). This in turn calls restartUpload which then calls [contributionsPresenter.saveContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsPresenter.java#L69) where the actuall upload is reattempted. Currently there does not seem to be any way to see why the attempt failed, which likely will be what we need to implement, so that it can then be used to terminate the reuploads early.
 
 Overview of how uploading photos works can be found [here](https://github.com/commons-app/commons-app-documentation/blob/master/android/Code-walkthrough-for-new-devs-(draft).md) under Uploading Pictures (this is quite out of date).
 
 #### Scope
 
 The scope of this issue is a bit difficult to predetermine as the upload functionality is spread out over more than 50 files, meaning that getting an overview of how it works is a significant task in it self.
+
+#### Requirements
+
+- Change behaviour of [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669) to stop if reason for failiur won't change (like invalid filepath).
+- This require us to have information on why the attempted failed at retryUpload, maybe through changing adding a value to [Contribution.state](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/Contribution.kt#L96) for genuine failiur, or a new field describing why it failed.
+- This the requires us to determine and save why the attempt failed, start looking in [contributionsPresenter.saveContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsPresenter.java#L69).
+
+- Finally we need documentation of any thing we do, JavaDocs and maybe in https://github.com/commons-app/commons-app-documentation, but that might be outdated. And unit tests of this functionality.
+
+
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
