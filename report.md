@@ -100,7 +100,7 @@ Overview of how uploading photos work can be found [here](https://github.com/com
 
 #### Scope
 
-The scope of this issue is a bit difficult to predetermine as the upload functionality is spread out over more than 20 files, meaning that getting an overview of how it works is a significant task in it self.
+The scope of this issue is a bit difficult to predetermine as the upload functionality is spread out over more than 50 files, meaning that getting an overview of how it works is a significant task in it self.
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
