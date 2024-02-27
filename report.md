@@ -16,18 +16,19 @@ This project is android app where you users can upload their pictures to the wik
 
 ## Project Plan
 
-The issues is that this project uses the Junit assert in their kotlin test but they want to upgrade 
-it to use appropriate AssertThat which comes from the (hamcrest dependency). The project has many 
-test cases roughly 1500 to be exact which means that to make this work many test cases has to be 
+### Issue [#3463](https://github.com/commons-app/apps-android-commons/issues/3463)
+
+This issue addresses that the project uses the Junit assert in their kotlin test but they want to upgrade 
+it to use appropriate AssertThat which comes from the (hamcrest dependency). The project has a lot of 
+test cases, roughly 1500 to be exact, which means that to make this work many test cases has to be 
 rewritten. 
 
-The way we plan to do this is that we divide the work so that each person takes a separate folder of
-closely related test and convert the test cases to use assertThat instead. The result of the test 
-cases should not change a they should still succeed after the change this is the only requirement and
-that the new test uses assertThat.
+The way we plan to do this is by using `grep` and pattern matching to change the common assert patterns. This will minimize the amout of manual work, though some will still need to be done for less common patterns.
 
-the team should use the following [link](https://hamcrest.org/JavaHamcrest/tutorial) to use get more 
-familiar with assertThat
+The result of the test cases should not change a they should still succeed after the change, and this is the only 
+requirement in addition to changing the tests to assertThat.
+
+Guide to assertThat [link](https://hamcrest.org/JavaHamcrest/tutorial) 
 
 ## Onboarding experience
 
