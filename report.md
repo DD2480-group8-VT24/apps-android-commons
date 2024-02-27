@@ -1,34 +1,12 @@
 # Report for assignment 4
 
-This is a template for your report. You are free to modify it as needed.
-It is not required to use markdown for your report either, but the report
-has to be delivered in a standard, cross-platform format.
-
 ## Project
 
-Name: apps-android-commons (group 8) 
+Name: apps-android-commons (group 8)
 
 URL: https://github.com/commons-app/apps-android-commons
 
-One or two sentences describing it
-
-This project is android app where you users can upload their pictures to the wikimedia commons
-
-## Project Plan
-
-### Issue [#3463](https://github.com/commons-app/apps-android-commons/issues/3463)
-
-This issue addresses that the project uses the Junit assert in their kotlin test but they want to upgrade 
-it to use appropriate AssertThat which comes from the (hamcrest dependency). The project has a lot of 
-test cases, roughly 1500 to be exact, which means that to make this work many test cases has to be 
-rewritten. 
-
-The way we plan to do this is by using `grep` and pattern matching to change the common assert patterns. This will minimize the amout of manual work, though some will still need to be done for less common patterns.
-
-The result of the test cases should not change a they should still succeed after the change, and this is the only 
-requirement in addition to changing the tests to assertThat.
-
-Guide to assertThat [link](https://hamcrest.org/JavaHamcrest/tutorial) 
+This project is android app where you users can upload pictures to the wikimedia commons
 
 ## Onboarding experience
 
@@ -62,13 +40,28 @@ you took care of and where you spent your time, if that time exceeds
 
 ## Overview of issue(s) and work done.
 
-Title: Remove usages of assert 
+### Title: Remove usages of assert #3463
 
 URL: https://github.com/commons-app/apps-android-commons/issues/3463
 
-Summary in one or two sentences
+#### Summary
 
-Scope (functionality and code affected).
+This issue addresses that the project uses the Junit assert in their kotlin test but they want to upgrade
+it to use appropriate AssertThat which comes from the ([hamcrest](https://hamcrest.org/JavaHamcrest/tutorial) dependency).
+
+#### Scope
+
+The scope of this function is both very extensive, as the project has ~1500 tests, and quite limited as most of tests can be changes using relatively simple `grep` pattern matching.
+
+The final result of the assertion change to assertThat should be that the test results are identical.
+
+### Title: Prevent retries for genuinely failed uploads #5284
+
+URL: https://github.com/commons-app/apps-android-commons/issues/5284
+
+#### Summary
+
+#### Scope
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
