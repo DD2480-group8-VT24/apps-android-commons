@@ -38,6 +38,39 @@ For setting up tools and libraries (step 4), enumerate all dependencies
 you took care of and where you spent your time, if that time exceeds
 30 minutes.
 
+### Jonatan Tuvstedt
+
+0. preliminary issue and project search
+
+   **2.5 hours** - Including scouting project and issues, and getting them to run. And then redoing the job when 5 other groups had chosen JabRef
+
+1. plenary discussions/meetings;
+
+   **3 hours** - Meetings covering project start up, selection of issue and project, and reevaluating our issue choice after consultation with Cyrille
+
+2. discussions within parts of the group;
+
+3. reading documentation;
+
+   **1 hour** - Initial analysis work for issue #3463, getting an understanding of the issue and solution (and the problem with having it as our main issue)
+
+4. configuration and setup;
+
+   **1 hour** - Getting the project and Android Studio to run
+
+5. analyzing code/output;
+
+6. writing documentation;
+
+   **1 hour**
+
+7. writing code;
+   **30 min** - Initial manual work on issue #3463
+
+8. running code?
+
+#### Total: 9 hours
+
 ## Overview of issue(s) and work done.
 
 ### Title: Remove usages of assert #3463
