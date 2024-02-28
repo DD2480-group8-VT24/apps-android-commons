@@ -101,6 +101,8 @@ This issue is about stopping automatic retries when a picture fails for a reason
 
 The main location to start looking is [here](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669), as well as more details can be found [here](https://github.com/commons-app/apps-android-commons/pull/5257#discussion_r1304662562). This in turn calls restartUpload which then calls [contributionsPresenter.saveContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsPresenter.java#L69) where the actuall upload is reattempted. Currently there does not seem to be any way to see why the attempt failed, which likely will be what we need to implement, so that it can then be used to terminate the reuploads early.
 
+The actual location where the outcome of the upload attempt is determined seems to be in [UploadWorker](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/main/app/src/main/java/fr/free/nrw/commons/upload/worker/UploadWorker.kt), so this is likely where we want to add code to be able to tell the reupload why a attempt failed.
+
 Overview of how uploading photos works can be found [here](https://github.com/commons-app/commons-app-documentation/blob/master/android/Code-walkthrough-for-new-devs-(draft).md) under Uploading Pictures (this is quite out of date).
 
 #### Scope
