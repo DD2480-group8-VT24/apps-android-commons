@@ -42,13 +42,23 @@ you took care of and where you spent your time, if that time exceeds
 
 0. preliminary issue and project search
 
-   **2.5 hours** - Including scouting project and issues, and getting them to run. And then redoing the job when 5 other groups had chosen JabRef
+   **2.5 hours** - Scouting projects and finding JabRef to be really great. Then looking into their issues while trying to get it to run, which I had a lot of problems with. Including scouting project and issues, and getting them to run.
+
+   **1 hour** - Redoing the job searching when I did not get it to work and 5 other groups had chosen JabRef
 
 1. plenary discussions/meetings;
 
-   **3 hours** - Meetings covering project start up, selection of issue and project, and reevaluating our issue choice after consultation with Cyrille
+   **0.5 hours** - Start up meeting
+
+   **1 hour** - Issue selection meeting
+
+   **1 hour** - Reevaluating our issue choice after consultation with Cyrille and finding a new one
+
+   **0.5 hours** - Project plan meeting for issue #5284
 
 2. discussions within parts of the group;
+
+   **0.5 hours** - syncing
 
 3. reading documentation;
 
@@ -61,18 +71,26 @@ you took care of and where you spent your time, if that time exceeds
    **1 hour** - Getting the project and Android Studio to run
 
 5. analyzing code/output;
+
    **1 hour** - Analysing how picture uploading works and how we can determine why an upload failed.
+
+   **2 hours** - Digging deep into how UploadWorker and the whole image uploading workflow works to find how and where we can determine why a upload attempt failed which can then be used to determine if a retry is worth while.
 
 6. writing documentation;
 
-   **1 hour**
+   **0.5 hours** - Documenting the failure points and what kind of failures could be the cause of failing for this position
 
 7. writing code;
-   **30 min** - Initial manual work on issue #3463
+
+   **0.5 hours** - Initial manual work on issue #3463
 
 8. running code?
 
-#### Total: 11 hours
+9. Writing report
+
+   **1 hour** - Refactoring and writing description of issue #5284
+
+#### Total: 15 hours
 
 ## Overview of issue(s) and work done.
 
@@ -97,13 +115,13 @@ URL: https://github.com/commons-app/apps-android-commons/issues/5284
 
 #### Summary
 
-This issue is about stopping automatic retries when a picture fails for a reason which obviously won't change when trying again, for example if it has an invalid filename. 
+This issue is about stopping automatic retries when a picture fails for a reason which obviously won't change when trying again, for example if it has an invalid filename.
 
 The main location to start looking is [here](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669), as well as more details can be found [here](https://github.com/commons-app/apps-android-commons/pull/5257#discussion_r1304662562). This in turn calls restartUpload which then calls [contributionsPresenter.saveContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsPresenter.java#L69) where the actuall upload is reattempted. Currently there does not seem to be any way to see why the attempt failed, which likely will be what we need to implement, so that it can then be used to terminate the reuploads early.
 
 The actual location where the outcome of the upload attempt is determined seems to be in [UploadWorker](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/8c63d74beed20d785d7789f1fea571f9ab164368/app/src/main/java/fr/free/nrw/commons/upload/worker/UploadWorker.kt#L299), so this is likely where we want to add code to be able to tell the reupload why a attempt failed.
 
-Overview of how uploading photos works can be found [here](https://github.com/commons-app/commons-app-documentation/blob/master/android/Code-walkthrough-for-new-devs-(draft).md) under Uploading Pictures (this is quite out of date).
+Overview of how uploading photos works can be found [here](<https://github.com/commons-app/commons-app-documentation/blob/master/android/Code-walkthrough-for-new-devs-(draft).md>) under Uploading Pictures (this is quite out of date).
 
 #### Scope
 
@@ -118,8 +136,6 @@ The scope of this issue is a bit difficult to predetermine as the upload functio
 - This the requires us to determine and save why the attempt failed, start looking in [contributionsPresenter.saveContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsPresenter.java#L69).
 
 - Finally we need documentation of any thing we do, JavaDocs and maybe in https://github.com/commons-app/commons-app-documentation, but that might be outdated. And unit tests of this functionality.
-
-
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
