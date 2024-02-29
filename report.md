@@ -205,6 +205,20 @@ The scope of this function is both very extensive, as the project has ~1500 test
 
 The final result of the assertion change to assertThat should be that the test results are identical.
 
+#### the final command that was used to rewrite the assert to assertThat
+
+´´´bash
+find . -name '*.kt' | xargs grep -l 'Assert.assertNotNull' | xargs sed -i '' -e 's/Assert.assertNotNull(\(.*\))/assertThat(\1, notNullValue())/g' &&
+find . -name '*.kt' | xargs grep -l 'assertNotNull' | xargs sed -i '' -e 's/assertNotNull(\(.*\))/assertThat(\1, notNullValue())/g' && 
+find . -name '*.kt' | xargs grep -l 'assertNull' | xargs sed -i '' -e 's/assertNull(\(.*\))/assertThat(\1, nullValue())/g' && 
+find . -name '*.kt' | xargs grep -l 'Assert.assertEquals' | xargs sed -i '' -e 's/Assert.assertEquals(\(.*\),\(.*\))/assertThat(\1, equalTo(\2))/g' && 
+find . -name '*.kt' | xargs grep -l 'assertEquals' | xargs sed -i '' -e 's/assertEquals(\(.*\),\(.*\))/assertThat(\1, equalTo(\2))/g' && 
+find . -name '*.kt' | xargs grep -l 'Assert.assertTrue' | xargs sed -i '' -e 's/Assert.assertTrue(\(.*\))/assertThat(\1, `is`(true))/g' && 
+find . -name '*.kt' | xargs grep -l 'assertTrue' | xargs sed -i '' -e 's/assertTrue(\(.*\))/assertThat(\1, `is`(true))/g' && 
+find . -name '*.kt' | xargs grep -l 'Assert.assertFalse' | xargs sed -i '' -e 's/Assert.assertFalse(\(.*\))/assertThat(\1, `is`(false))/g' && 
+find . -name '*.kt' | xargs grep -l 'assertFalse' | xargs sed -i '' -e 's/assertFalse(\(.*\))/assertThat(\1, `is`(false))/g'
+´´´
+
 ### Title: Prevent retries for genuinely failed uploads #5284
 
 URL: https://github.com/commons-app/apps-android-commons/issues/5284
