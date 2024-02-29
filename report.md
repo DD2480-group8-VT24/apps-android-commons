@@ -268,6 +268,10 @@ Optional (point 5): considered for acceptance (passes all automated checks).
 Overall results with link to a copy or excerpt of the logs (before/after
 refactoring).
 
+[Original test suite results](https://github.com/DD2480-group8-VT24/apps-android-commons/tree/main/original_test_log)
+
+[test suite result after refactoring assert to assertThat](https://github.com/DD2480-group8-VT24/apps-android-commons/tree/refactor_assert_to_assert_that/refactor_assert_to_assertThat_test_log/testBetaDebugUnitTest)
+
 ## UML class diagram and its description
 
 ### Key changes/classes affected
