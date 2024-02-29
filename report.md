@@ -150,11 +150,13 @@ you took care of and where you spent your time, if that time exceeds
 
    **0.5** hours - Project plan meeting for issue #5284
 
-2. discussions within parts of the group;
+   **0.5** hours - stand up meeting for issue #5284
+
+3. discussions within parts of the group;
 
    **0.5** hours - syncing
  
-3. reading documentation;
+4. reading documentation;
    
    **1** hours - reading documentation for the issue #3463 and looking up how assertThat works and how 
    they differ from Junit asserts.
@@ -166,31 +168,35 @@ you took care of and where you spent your time, if that time exceeds
    **1** hours - reading documentation and code for issue #5284, this also includes reading documentation on
    how to run the different flavours i.e builds of the app.
 
-4. configuration and setup;
+6. configuration and setup;
 
    **1** hours - installation of android studio & gradle, and setting up the project 
    to be able to run the app and run the full test suite and saving the results.    
 
-5. analyzing code/output;
+7. analyzing code/output;
 
    **0.8** hours - understanding the current testing code structure for the issue #3463
    
-   **0.5** hours - understanding at a very basic level how the image uploading works for issue #5284   
+   **0.5** hours - understanding at a very basic level how the image uploading works for issue #5284
 
-6. writing documentation;
+   **1.2** hours - diving deeper into the testing suite built by the project focusing specially on testing code that is relevant for the issue #5284.
+   the goal was figure out how to write test to test the added functionality for the issue, thus this included understanding how their current test suite works, how they write their test.
+   This also includes reading documentation for mockito and how it's used since the project uses it a lot in their tests.
+
+9. writing documentation;
 
    **0.5** hours - documentation of the onboarding experience for the project
 
    **1** hours - documentation of the work that I have done for the assignment  
 
-7. writing code;
+10. writing code;
    
    **2** hours - Rewriting all of the assert for the entire test suite using the commands which is linked
    below. Here also time was spent on adding the required imports for the tests and removing the ones no longer 
    used. This also includes creating the final command (shown further below) and testing that it 
    works commands that it works and the output is correct.
 
-8. running code?
+11. running code?
    
    **1** hours - running all of the tests and making sure that they work in the exact same way as before.
    This work also includes changing back some of the test because that failed because of the rewrite. 
@@ -200,7 +206,7 @@ you took care of and where you spent your time, if that time exceeds
    it seems silly but the debug version didn't specify that you had to create an account so gets the 
    ability to upload images. This was only shown in the prod version of the build.
 
-#### total hours: 18.3
+#### total hours: 20.0
 
 ### Melissa Mazura
 
