@@ -10,9 +10,26 @@ This project is android app where you users can upload pictures to the wikimedia
 
 ## Onboarding experience
 
-Did you choose a new project or continue on the previous one?
+### Did you choose a new project or continue on the previous one?
 
-If you changed the project, how did your experience differ from before?
+We choose a new project compared to the previous one which was [karate](https://github.com/karatelabs/karate) 
+which was a single framework/tool that included API test automation, mocks, performance-testing and
+UI automation all in one package. The reason for switching project was because **karate** has very 
+few issues which limited the final issue that we could select. Furthermore no issues are labelled good
+first issue or something like that and as we talked about in the previous assignment this project has 
+great documentation for how to use the project as user but very limited documentation for contributors.
+
+### If you changed the project, how did your experience differ from before?
+
+The project that we chose was **apps-android-commons** which is an Android app (written in Kotlin&Java) 
+where users can share and upload images, the goal is to create a database with free-to-use images and 
+other media. Ultimately these images are to be used in Wikipedia. Compared to **karate** this project 
+is far much better as a choice for this exercise because it has more issues and many of them are good 
+as a first issue. Furthermore, the project has more documentation for contributors which makes it 
+easier to start working. Overall the experience of setting up the project, building it and running 
+the app was great and straight forward. There was one problem in which one was required to remove a 
+specific folder (we still don't know why) but the good thing was that this [issue](https://github.com/commons-app/apps-android-commons/issues/5571) 
+was brought up in GitHub which made it possible for us to find the solution.
 
 ## Effort spent
 
