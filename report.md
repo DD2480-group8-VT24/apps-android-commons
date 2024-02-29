@@ -109,6 +109,85 @@ you took care of and where you spent your time, if that time exceeds
 
 #### Total: 15 hours
 
+### Atheer Salilm
+
+0. preliminary issue and project search
+
+   **3** hours spent on finding the initial issue, the consisted of first looking if anything could be
+   done in the **karate** project. Then started to look at other project that are suitable and fulfill the
+   requirements for the task and started to scout the issues that are labelled as good first issue and getting a basic
+   understanding of them in terms of what they are about and what one is supposed to do.
+
+   Below is a list of all the issues that I gathered as potential issues that we in the group could tackle.
+   - [issue1](https://github.com/pixijs/pixijs/issues/10162)
+   - [issue2](https://github.com/serverless/serverless/issues/11978)
+   - [issue3](https://github.com/pytorch/pytorch/issues/106377)
+   - [issue4](https://github.com/pytorch/pytorch/issues/93553)
+   - [issue5](https://github.com/pytorch/pytorch/issues/93701)
+   - [issue6](https://github.com/commons-app/apps-android-commons/issues/3463)
+
+1. plenary discussions/meetings;
+
+   **0.5** hours - Start up meeting
+
+   **1** hour - Issue selection meeting
+
+   **1** hour - Reevaluating our issue choice after consultation with Cyrille and finding a new one
+
+   **0.5** hours - Project plan meeting for issue #5284
+
+2. discussions within parts of the group;
+
+   **0.5** hours - syncing
+ 
+3. reading documentation;
+   
+   **1** hours - reading documentation for the issue #3463 and looking up how assertThat works and how 
+   they differ from Junit asserts.
+   
+   **2** hours - reading documentation, man pages and looking at other website on how to use the commands 
+   that were suggested by Cyrille that could help automate large part of issue #3463. The commands 
+   in question were xargs, sed and regular expressions (regex).
+
+   **1** hours - reading documentation and code for issue #5284, this also includes reading documentation on
+   how to run the different flavours i.e builds of the app.
+
+4. configuration and setup;
+
+   **1** hours - installation of android studio & gradle, and setting up the project 
+   to be able to run the app and run the full test suite and saving the results.    
+
+5. analyzing code/output;
+
+   **0.8** hours - understanding the current testing code structure for the issue #3463
+   
+   **0.5** hours - understanding at a very basic level how the image uploading works for issue #5284   
+
+6. writing documentation;
+
+   **0.5** hours - documentation of the onboarding experience for the project
+
+   **1** hours - documentation of the work that I have done for the assignment  
+
+7. writing code;
+   
+   **2** hours - Rewriting all of the assert for the entire test suite using the commands which is linked
+   below. Here also time was spent on adding the required imports for the tests and removing the ones no longer 
+   used. This also includes creating the final command (shown further below) and testing that it 
+   works commands that it works and the output is correct.
+
+8. running code?
+   
+   **1** hours - running all of the tests and making sure that they work in the exact same way as before.
+   This work also includes changing back some of the test because that failed because of the rewrite. 
+   
+   **1** hours - Trying from the app side using the simulator figure out how to recreate a genuine image upload fail
+   for the issue #5284. This also includes figuring out how to even upload pictures to the app in the first place,
+   it seems silly but the debug version didn't specify that you had to create an account so gets the 
+   ability to upload images. This was only shown in the prod version of the build.
+
+#### total hours: 18.3
+
 ## Overview of issue(s) and work done.
 
 ### Title: Remove usages of assert #3463
