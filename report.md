@@ -73,6 +73,8 @@ you took care of and where you spent your time, if that time exceeds
 
    **0.5 hours** - Project plan meeting for issue #5284
 
+  **0.5 hours** - Stand up meeting
+
 2. discussions within parts of the group;
 
    **0.5 hours** - syncing
@@ -87,27 +89,33 @@ you took care of and where you spent your time, if that time exceeds
 
    **1 hour** - Getting the project and Android Studio to run
 
-5. analyzing code/output;
+   **1 hour** - Getting android emulator to run
+
+6. analyzing code/output;
 
    **1 hour** - Analysing how picture uploading works and how we can determine why an upload failed.
 
    **2 hours** - Digging deep into how UploadWorker and the whole image uploading workflow works to find how and where we can determine why a upload attempt failed which can then be used to determine if a retry is worth while.
 
-6. writing documentation;
+7. writing documentation;
 
    **0.5 hours** - Documenting the failure points and what kind of failures could be the cause of failing for this position
 
-7. writing code;
+8. writing code;
 
    **0.5 hours** - Initial manual work on issue #3463
 
-8. running code?
+9. running code?
 
-9. Writing report
+    **1.5 hours** - Running app to try and reproduce the failure states.
+
+11. Writing report
 
    **1 hour** - Refactoring and writing description of issue #5284
 
-#### Total: 15 hours
+  **0.5 hours** - project plan
+
+#### Total: 18.5 hours
 
 ### Atheer Salilm
 
