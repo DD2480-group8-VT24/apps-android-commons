@@ -79,13 +79,15 @@ you took care of and where you spent your time, if that time exceeds
 
    **0.5 hours** - syncing
 
-3. reading documentation;
+   **0.5 hours** - Reviewing and discussing Melissas code
+
+4. reading documentation;
 
    **1 hour** - Initial analysis work for issue #3463, getting an understanding of the issue and solution (and the problem with having it as our main issue)
 
    **1 hour** - Reading documentation related to issue #5284, more specifically how uploading works
 
-4. configuration and setup;
+5. configuration and setup;
 
    **1 hour** - Getting the project and Android Studio to run
 
@@ -105,17 +107,21 @@ you took care of and where you spent your time, if that time exceeds
 
    **0.5 hours** - Initial manual work on issue #3463
 
-9. running code?
+   **0.5 hours** - pair programming mvp
+
+10. running code?
 
     **1.5 hours** - Running app to try and reproduce the failure states.
 
-11. Writing report
+    **0.5 hours** - trying to reproduce invalid file name error
+
+12. Writing report
 
    **1 hour** - Refactoring and writing description of issue #5284
 
   **0.5 hours** - project plan
 
-#### Total: 18.5 hours
+#### Total: 20 hours
 
 ### Atheer Salilm
 
