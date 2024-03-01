@@ -353,6 +353,8 @@ Optional (point 2): relation to design pattern(s).
 
 What are your main take-aways from this project? What did you learn?
 
+**Jonatan Tuvstedt** - My main take away from this project is that trying to get to grips with a large code base as a group is very hard. I have previous experience with digging in into a large unknown code base, but only on my own. Trying to sync this effort to avoid everyone having to duplicate the same work in understanding how the code base works and where our issue fits into this is very difficult. On the one hand everyone will need to get to grips with the general code layout to be able to understand the problem, but on the other hand not everyone needs to dig into the nitty gritty of every part. Determining where that line lies and how to best sync what we have learned has probably been the biggest challenge, but is also a very important take away.
+
 ### Essence standard
 
 For **Seeded** we haven't really moved much since lab 2. We still fulfil all the bullet points (that are relevant) except for governance and leadership which is still very ad hoc. One point where we might have regressed somewhat is regarding constraints on where and how the work is carried out which is a lot harder to nail down with such an open ended assignment, when compared to lab 2. Regarding **Formed** we have actually gotten a better score, but only because we actually have external stakeholders which we didn't for lab 2. And here as well we achieve some points to a lesser extent than before just because the assignment is harder to structure when so much effort needs to be put into defining what needs to be done.
