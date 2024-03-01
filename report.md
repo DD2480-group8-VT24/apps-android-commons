@@ -261,7 +261,7 @@ you took care of and where you spent your time, if that time exceeds
 
    **1** writing my own part and add the technical part for issue #5284
 
-   **0.5 hours** creating the UML diagram
+   **1 hour** creating the UML diagram
 
 7. writing code
 
@@ -277,7 +277,7 @@ you took care of and where you spent your time, if that time exceeds
    **1 hour** running the tests again to see whether the build fails; trying to check if the function fails in its current state or not
 
 
-#### Total: 13.5 hours
+#### Total: 14 hours
 
 ## Overview of issue(s) and work done.
 
