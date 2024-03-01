@@ -290,16 +290,55 @@ URL: https://github.com/commons-app/apps-android-commons/issues/3463
 
 #### Summary
 
-This issue addresses that the project uses the Junit assert in their kotlin test but they want to upgrade
-it to use appropriate AssertThat which comes from the ([hamcrest](https://hamcrest.org/JavaHamcrest/tutorial) dependency).
+This issue addresses that the project uses the Junit assert in their Kotlin tests but they want to
+update the assert statements to instead use appropriate AssertThat statements which come from the
+([hamcrest](https://hamcrest.org/JavaHamcrest/tutorial) dependency).
 
 #### Scope
 
-The scope of this function is both very extensive, as the project has ~1500 tests, and quite limited as most of tests can be changes using relatively simple `grep` pattern matching.
+This issue essentially affects all of the existing test cases since the entire test suite has to be updated
+to use assertThat. Furthermore, the scope of this issue is both very extensive, as the project has ~1500 tests,
+and quite limited as most of the test cases use the same assert patterns which can be automatically
+rewritten to appropriate assertThat statements with the help of regular expression (more about this below).
+#### Requirements
 
-The final result of the assertion change to assertThat should be that the test results are identical.
+The requirements for this issue is very straight forward 
+
+##### requirement 1
+
+###### Title: refactor test suite to use assertThat statements
+
+###### Description
+   - refactor the existing Junit assert statements to appropriate assertThat statements for a given test case
+   - do the above step for the entire test suite
+
+##### requirement 2
+
+###### Title: a succeeding test before refactor should still succeed after refactor
+
+###### Description
+   - After a test case has been rewritten using a appropriate assertThat statements if the test case 
+   succeeded before the rewrite then it has also to succeed after the rewrite.
+
+#### work plan
+
+The initial work plan for this issue was that each person work one folder at a time. The project had
+divided close related tests into the same folder thus the person was in charge of rewriting that entire
+folder of tests to use assertThat. We were unsure if this issue counted towards being non-trivial thus
+we contacted Cyrille and discussed the issue with him and he pointed us that the issue can
+largely be automated by regular expression and some unix commands. We were instructed to investigate
+if this issue could largely be solved using regular expression and if that is the case then we would have
+to find a new issue, which was what we ultimately did.
+
+Atheer Salim, investigated the commands and regular expressions if it did help or not and the result
+was that it did, but atheer was allowed to spend as small amount of time as possible on rewriting the test
+cases using the automatic command and could then join the other team members in working on the new issue
 
 #### the final command that was used to rewrite the assert to assertThat
+
+This is the final command that was constructed to help automatically rewrite the entire test suite from
+assert to AssertThat this was possible since the entire test suite consisted of very few different assert
+patterns.
 
 ```
 find . -name '*.kt' | xargs grep -l 'Assert.assertNotNull' | xargs sed -i '' -e 's/Assert.assertNotNull(\(.*\))/assertThat(\1, notNullValue())/g' &&
@@ -312,6 +351,28 @@ find . -name '*.kt' | xargs grep -l 'assertTrue' | xargs sed -i '' -e 's/assertT
 find . -name '*.kt' | xargs grep -l 'Assert.assertFalse' | xargs sed -i '' -e 's/Assert.assertFalse(\(.*\))/assertThat(\1, `is`(false))/g' &&
 find . -name '*.kt' | xargs grep -l 'assertFalse' | xargs sed -i '' -e 's/assertFalse(\(.*\))/assertThat(\1, `is`(false))/g'
 ```
+
+##### Explanation of the command
+
+```find``` - this command was used to find all files that ended with .kt which is used to denote
+kotlin files, which is where the test cases resided.
+
+```xargs``` - this is a general command that was used to help read the output of the previous command
+
+```grep``` - this command was used to find the lines of code that contained the first part of the assert pattern
+
+```sed``` - this was the command that was used to read in and pattern match for a pattern that will
+be replaced with a corresponding appropriate assertThat using regular expression.
+
+#### code changes
+
+The code was changed using the command shown previously and since the different assert patterns was few 
+this made it possible to refactor the majority of the test to use assertThat statements. To note there 
+are few test cases that still Junit assert statements and the reason for this is that the automatic rewrite 
+made those test cases fail when they actually succeeded before the rewrite and as Cyrille requested 
+no time was allocated for solving those.  
+
+The entire code that was changed can be viewed using the following [PR](https://github.com/commons-app/apps-android-commons/pull/5574) which was submitted to the repo.
 
 ### Issue #5284: Prevent retries for genuinely failed uploads
 
