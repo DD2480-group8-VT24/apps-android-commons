@@ -12,23 +12,23 @@ This project is android app where you users can upload pictures to the wikimedia
 
 ### Did you choose a new project or continue on the previous one?
 
-We choose a new project compared to the previous one which was [karate](https://github.com/karatelabs/karate) 
+We choose a new project compared to the previous one which was [karate](https://github.com/karatelabs/karate)
 which was a single framework/tool that included API test automation, mocks, performance-testing and
-UI automation all in one package. The reason for switching project was because **karate** has very 
+UI automation all in one package. The reason for switching project was because **karate** has very
 few issues which limited the final issue that we could select. Furthermore no issues are labelled good
-first issue or something like that and as we talked about in the previous assignment this project has 
+first issue or something like that and as we talked about in the previous assignment this project has
 great documentation for how to use the project as user but very limited documentation for contributors.
 
 ### If you changed the project, how did your experience differ from before?
 
-The project that we chose was **apps-android-commons** which is an Android app (written in Kotlin&Java) 
-where users can share and upload images, the goal is to create a database with free-to-use images and 
-other media. Ultimately these images are to be used in Wikipedia. Compared to **karate** this project 
-is far much better as a choice for this exercise because it has more issues and many of them are good 
-as a first issue. Furthermore, the project has more documentation for contributors which makes it 
-easier to start working. Overall the experience of setting up the project, building it and running 
-the app was great and straight forward. There was one problem in which one was required to remove a 
-specific folder (we still don't know why) but the good thing was that this [issue](https://github.com/commons-app/apps-android-commons/issues/5571) 
+The project that we chose was **apps-android-commons** which is an Android app (written in Kotlin&Java)
+where users can share and upload images, the goal is to create a database with free-to-use images and
+other media. Ultimately these images are to be used in Wikipedia. Compared to **karate** this project
+is far much better as a choice for this exercise because it has more issues and many of them are good
+as a first issue. Furthermore, the project has more documentation for contributors which makes it
+easier to start working. Overall the experience of setting up the project, building it and running
+the app was great and straight forward. There was one problem in which one was required to remove a
+specific folder (we still don't know why) but the good thing was that this [issue](https://github.com/commons-app/apps-android-commons/issues/5571)
 was brought up in GitHub which made it possible for us to find the solution.
 
 ## Effort spent
@@ -73,7 +73,7 @@ you took care of and where you spent your time, if that time exceeds
 
    **0.5 hours** - Project plan meeting for issue #5284
 
-  **0.5 hours** - Stand up meeting
+   **0.5 hours** - Stand up meeting
 
 2. discussions within parts of the group;
 
@@ -81,45 +81,45 @@ you took care of and where you spent your time, if that time exceeds
 
    **0.5 hours** - Reviewing and discussing Melissas code
 
-4. reading documentation;
+3. reading documentation;
 
    **1 hour** - Initial analysis work for issue #3463, getting an understanding of the issue and solution (and the problem with having it as our main issue)
 
    **1 hour** - Reading documentation related to issue #5284, more specifically how uploading works
 
-5. configuration and setup;
+4. configuration and setup;
 
    **1 hour** - Getting the project and Android Studio to run
 
    **1 hour** - Getting android emulator to run
 
-6. analyzing code/output;
+5. analyzing code/output;
 
    **1 hour** - Analysing how picture uploading works and how we can determine why an upload failed.
 
    **2 hours** - Digging deep into how UploadWorker and the whole image uploading workflow works to find how and where we can determine why a upload attempt failed which can then be used to determine if a retry is worth while.
 
-7. writing documentation;
+6. writing documentation;
 
    **0.5 hours** - Documenting the failure points and what kind of failures could be the cause of failing for this position
 
-8. writing code;
+7. writing code;
 
    **0.5 hours** - Initial manual work on issue #3463
 
    **0.5 hours** - pair programming mvp
 
-10. running code?
+8. running code?
 
-    **1.5 hours** - Running app to try and reproduce the failure states.
+   **1.5 hours** - Running app to try and reproduce the failure states.
 
-    **0.5 hours** - trying to reproduce invalid file name error
+   **0.5 hours** - trying to reproduce invalid file name error
 
-12. Writing report
+9. Writing report
 
    **1 hour** - Refactoring and writing description of issue #5284
 
-  **0.5 hours** - project plan
+**0.5 hours** - project plan
 
 #### Total: 20 hours
 
@@ -133,6 +133,7 @@ you took care of and where you spent your time, if that time exceeds
    understanding of them in terms of what they are about and what one is supposed to do.
 
    Below is a list of all the issues that I gathered as potential issues that we in the group could tackle.
+
    - [issue1](https://github.com/pixijs/pixijs/issues/10162)
    - [issue2](https://github.com/serverless/serverless/issues/11978)
    - [issue3](https://github.com/pytorch/pytorch/issues/106377)
@@ -152,58 +153,58 @@ you took care of and where you spent your time, if that time exceeds
 
    **0.5** hours - stand up meeting for issue #5284
 
-3. discussions within parts of the group;
+2. discussions within parts of the group;
 
    **0.5** hours - syncing
- 
-4. reading documentation;
-   
-   **1** hours - reading documentation for the issue #3463 and looking up how assertThat works and how 
+
+3. reading documentation;
+
+   **1** hours - reading documentation for the issue #3463 and looking up how assertThat works and how
    they differ from Junit asserts.
-   
-   **2** hours - reading documentation, man pages and looking at other website on how to use the commands 
-   that were suggested by Cyrille that could help automate large part of issue #3463. The commands 
+
+   **2** hours - reading documentation, man pages and looking at other website on how to use the commands
+   that were suggested by Cyrille that could help automate large part of issue #3463. The commands
    in question were xargs, sed and regular expressions (regex).
 
    **1** hours - reading documentation and code for issue #5284, this also includes reading documentation on
    how to run the different flavours i.e builds of the app.
 
-6. configuration and setup;
+4. configuration and setup;
 
-   **1** hours - installation of android studio & gradle, and setting up the project 
-   to be able to run the app and run the full test suite and saving the results.    
+   **1** hours - installation of android studio & gradle, and setting up the project
+   to be able to run the app and run the full test suite and saving the results.
 
-7. analyzing code/output;
+5. analyzing code/output;
 
    **0.8** hours - understanding the current testing code structure for the issue #3463
-   
+
    **0.5** hours - understanding at a very basic level how the image uploading works for issue #5284
 
    **1.2** hours - diving deeper into the testing suite built by the project focusing specially on testing code that is relevant for the issue #5284.
    the goal was figure out how to write test to test the added functionality for the issue, thus this included understanding how their current test suite works, how they write their test.
    This also includes reading documentation for mockito and how it's used since the project uses it a lot in their tests.
 
-9. writing documentation;
+6. writing documentation;
 
    **0.5** hours - documentation of the onboarding experience for the project
 
-   **1** hours - documentation of the work that I have done for the assignment  
+   **1** hours - documentation of the work that I have done for the assignment
 
-10. writing code;
-   
+7. writing code;
+
    **2** hours - Rewriting all of the assert for the entire test suite using the commands which is linked
-   below. Here also time was spent on adding the required imports for the tests and removing the ones no longer 
-   used. This also includes creating the final command (shown further below) and testing that it 
+   below. Here also time was spent on adding the required imports for the tests and removing the ones no longer
+   used. This also includes creating the final command (shown further below) and testing that it
    works commands that it works and the output is correct.
 
-11. running code?
-   
+8. running code?
+
    **1** hours - running all of the tests and making sure that they work in the exact same way as before.
-   This work also includes changing back some of the test because that failed because of the rewrite. 
-   
+   This work also includes changing back some of the test because that failed because of the rewrite.
+
    **1** hours - Trying from the app side using the simulator figure out how to recreate a genuine image upload fail
    for the issue #5284. This also includes figuring out how to even upload pictures to the app in the first place,
-   it seems silly but the debug version didn't specify that you had to create an account so gets the 
+   it seems silly but the debug version didn't specify that you had to create an account so gets the
    ability to upload images. This was only shown in the prod version of the build.
 
 #### total hours: 20.0
@@ -225,7 +226,7 @@ you took care of and where you spent your time, if that time exceeds
    **0.5 hours** - Project plan meeting for issue #5284
 
 2. discussions within parts of the group
-   
+
    **0.5 hours** - syncing
 
 3. reading documentation;
@@ -256,7 +257,6 @@ you took care of and where you spent your time, if that time exceeds
 
 #### Total: 12.5 hours
 
-
 ## Overview of issue(s) and work done.
 
 ### Title: Remove usages of assert #3463
@@ -278,13 +278,13 @@ The final result of the assertion change to assertThat should be that the test r
 
 ```
 find . -name '*.kt' | xargs grep -l 'Assert.assertNotNull' | xargs sed -i '' -e 's/Assert.assertNotNull(\(.*\))/assertThat(\1, notNullValue())/g' &&
-find . -name '*.kt' | xargs grep -l 'assertNotNull' | xargs sed -i '' -e 's/assertNotNull(\(.*\))/assertThat(\1, notNullValue())/g' && 
-find . -name '*.kt' | xargs grep -l 'assertNull' | xargs sed -i '' -e 's/assertNull(\(.*\))/assertThat(\1, nullValue())/g' && 
-find . -name '*.kt' | xargs grep -l 'Assert.assertEquals' | xargs sed -i '' -e 's/Assert.assertEquals(\(.*\),\(.*\))/assertThat(\1, equalTo(\2))/g' && 
-find . -name '*.kt' | xargs grep -l 'assertEquals' | xargs sed -i '' -e 's/assertEquals(\(.*\),\(.*\))/assertThat(\1, equalTo(\2))/g' && 
-find . -name '*.kt' | xargs grep -l 'Assert.assertTrue' | xargs sed -i '' -e 's/Assert.assertTrue(\(.*\))/assertThat(\1, `is`(true))/g' && 
-find . -name '*.kt' | xargs grep -l 'assertTrue' | xargs sed -i '' -e 's/assertTrue(\(.*\))/assertThat(\1, `is`(true))/g' && 
-find . -name '*.kt' | xargs grep -l 'Assert.assertFalse' | xargs sed -i '' -e 's/Assert.assertFalse(\(.*\))/assertThat(\1, `is`(false))/g' && 
+find . -name '*.kt' | xargs grep -l 'assertNotNull' | xargs sed -i '' -e 's/assertNotNull(\(.*\))/assertThat(\1, notNullValue())/g' &&
+find . -name '*.kt' | xargs grep -l 'assertNull' | xargs sed -i '' -e 's/assertNull(\(.*\))/assertThat(\1, nullValue())/g' &&
+find . -name '*.kt' | xargs grep -l 'Assert.assertEquals' | xargs sed -i '' -e 's/Assert.assertEquals(\(.*\),\(.*\))/assertThat(\1, equalTo(\2))/g' &&
+find . -name '*.kt' | xargs grep -l 'assertEquals' | xargs sed -i '' -e 's/assertEquals(\(.*\),\(.*\))/assertThat(\1, equalTo(\2))/g' &&
+find . -name '*.kt' | xargs grep -l 'Assert.assertTrue' | xargs sed -i '' -e 's/Assert.assertTrue(\(.*\))/assertThat(\1, `is`(true))/g' &&
+find . -name '*.kt' | xargs grep -l 'assertTrue' | xargs sed -i '' -e 's/assertTrue(\(.*\))/assertThat(\1, `is`(true))/g' &&
+find . -name '*.kt' | xargs grep -l 'Assert.assertFalse' | xargs sed -i '' -e 's/Assert.assertFalse(\(.*\))/assertThat(\1, `is`(false))/g' &&
 find . -name '*.kt' | xargs grep -l 'assertFalse' | xargs sed -i '' -e 's/assertFalse(\(.*\))/assertThat(\1, `is`(false))/g'
 ```
 
@@ -353,8 +353,8 @@ Optional (point 2): relation to design pattern(s).
 
 What are your main take-aways from this project? What did you learn?
 
-How did you grow as a team, using the Essence standard to evaluate yourself?
+### Essence standard
 
-Optional (point 6): How would you put your work in context with best software engineering practice?
+For **Seeded** we haven't really moved much since lab 2. We still fulfil all the bullet points (that are relevant) except for governance and leadership which is still very ad hoc. One point where we might have regressed somewhat is regarding constraints on where and how the work is carried out which is a lot harder to nail down with such an open ended assignment, when compared to lab 2. Regarding **Formed** we have actually gotten a better score, but only because we actually have external stakeholders which we didn't for lab 2. And here as well we achieve some points to a lesser extent than before just because the assignment is harder to structure when so much effort needs to be put into defining what needs to be done.
 
-Optional (point 7): Is there something special you want to mention here?
+On the **Collaborating** front we have done a bit better, mostly due to us coming to terms with some of us having a very different schedule. This in combination with the fact that we did not just try and split the work in 5 but instead worked more iteratively made the collaboration run more smoothly. Finally with regards to **Performing** we also out progressed since lab 2 with us being more adaptive and better at avoiding wasted work, mostly due to improvements in **Collaborating**.
