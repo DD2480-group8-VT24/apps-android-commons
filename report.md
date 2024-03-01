@@ -257,6 +257,8 @@ you took care of and where you spent your time, if that time exceeds
 
    **1 hour** trying to understand the code for issue #5284 and how to try and solve for it
 
+   **1 hour** looking at invalidFilePath and understanding how that works
+
 6. writing documentation
 
    **1** writing my own part and add the technical part for issue #5284
@@ -271,13 +273,14 @@ you took care of and where you spent your time, if that time exceeds
 
    **1 hour** writing proper solution for issue #5284
 
+   **0.5 hours** cleaning up code
 
 8. running code?
 
    **1 hour** running the tests again to see whether the build fails; trying to check if the function fails in its current state or not
 
 
-#### Total: 14 hours
+#### Total: 14.5 hours
 
 ## Overview of issue(s) and work done.
 
