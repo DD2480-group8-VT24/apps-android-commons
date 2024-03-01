@@ -395,7 +395,7 @@ refactoring).
 
 ### Key changes/classes affected
 
-Optional (point 1): Architectural overview.
+![alt text](https://raw.githubusercontent.com/DD2480-group8-VT24/apps-android-commons/main/uml_before.png)
 
 Optional (point 2): relation to design pattern(s).
 
