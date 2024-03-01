@@ -229,16 +229,20 @@ you took care of and where you spent your time, if that time exceeds
 
    **0.5 hours** - Project plan meeting for issue #5284
 
+   **0.5 hours** - meeting for issue #5284 and further discussion
+
+
 2. discussions within parts of the group
 
    **0.5 hours** - syncing
 
-3. reading documentation;
+3. reading documentation
 
    **1 hour** reading up on not chosen issue [issue](https://github.com/sirixdb/sirix/issues/625)
+
    **1 hour** Reading documentation related to issue #5284 and on how the app works as a whole
 
-4. configuration and setup;
+4. configuration and setup
 
    **1 hour** downloading Android Studios and Gradle, running the code and running the tests
 
@@ -246,20 +250,27 @@ you took care of and where you spent your time, if that time exceeds
 
    **1 hour** trying to understand the code for issue #5284 and how to try and solve for it
 
-6. writing documentation;
+6. writing documentation
 
-   **0.5** writing my own part and add the technical part for issue #5284
+   **1** writing my own part and add the technical part for issue #5284
 
-7. writing code;
+   **0.5 hours** creating the UML diagram
 
-   **2 hours** writing the code for the issue #5284
+7. writing code
+
+   **0.5 hours** writing first solution for issue #5284
+   
    **0.5 hours** peer programming with Jonatan
+
+   **1 hours** writing proper solution for issue #5284
+
 
 8. running code?
 
    **1 hour** running the tests again to see whether the build fails; trying to check if the function fails in its current state or not
 
-#### Total: 12.5 hours
+
+#### Total: 13.5 hours
 
 ## Overview of issue(s) and work done.
 
