@@ -389,6 +389,8 @@ refactoring).
 
 [test suite result after refactoring assert to assertThat](https://github.com/DD2480-group8-VT24/apps-android-commons/tree/testsuite_log_after_refactor_from_assert_to_assertthat/refactor_assert_to_assertThat_test_log/testBetaDebugUnitTest)
 
+[test suite result after working on issue #5284](https://github.com/DD2480-group8-VT24/apps-android-commons/tree/issue-5284-test-log/issue-5284-full-test-suite-log)
+
 ## UML class diagram and its description
 
 ### Key changes/classes affected
