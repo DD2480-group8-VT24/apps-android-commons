@@ -259,7 +259,7 @@ you took care of and where you spent your time, if that time exceeds
 
 ## Overview of issue(s) and work done.
 
-### Title: Remove usages of assert #3463
+### Issue #3463: Remove usages of assert
 
 URL: https://github.com/commons-app/apps-android-commons/issues/3463
 
@@ -288,37 +288,43 @@ find . -name '*.kt' | xargs grep -l 'Assert.assertFalse' | xargs sed -i '' -e 's
 find . -name '*.kt' | xargs grep -l 'assertFalse' | xargs sed -i '' -e 's/assertFalse(\(.*\))/assertThat(\1, `is`(false))/g'
 ```
 
-### Title: Prevent retries for genuinely failed uploads #5284
+### Issue #5284: Prevent retries for genuinely failed uploads
 
 URL: https://github.com/commons-app/apps-android-commons/issues/5284
 
 #### Summary
 
-This issue is about stopping automatic retries when a picture fails for a reason which obviously won't change when trying again, for example if it has an invalid filename.
+This issue is about stopping automatic retries when an upload attempt for a picture fails for a reason which can't be solved by just trying again, for example if it has an invalid filename. The purpose of this is primarily to improve the UX while also freeing up system resources.
 
-The main location to start looking is [here](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669), as well as more details can be found [here](https://github.com/commons-app/apps-android-commons/pull/5257#discussion_r1304662562). This in turn calls restartUpload which then calls [contributionsPresenter.saveContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsPresenter.java#L69) where the actuall upload is reattempted. Currently there does not seem to be any way to see why the attempt failed, which likely will be what we need to implement, so that it can then be used to terminate the reuploads early.
-
-The actual location where the outcome of the upload attempt is determined seems to be in [UploadWorker](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/8c63d74beed20d785d7789f1fea571f9ab164368/app/src/main/java/fr/free/nrw/commons/upload/worker/UploadWorker.kt#L299), so this is likely where we want to add code to be able to tell the reupload why a attempt failed.
-
-Overview of how uploading photos works can be found [here](<https://github.com/commons-app/commons-app-documentation/blob/master/android/Code-walkthrough-for-new-devs-(draft).md>) under Uploading Pictures (this is quite out of date).
+The part of the code which deals with retrying uploads is in [ContributionsFragment.retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669), where the decision whether to try again is made. The actual (re)uploading is managed by [UploadWorker.uploadContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/8c63d74beed20d785d7789f1fea571f9ab164368/app/src/main/java/fr/free/nrw/commons/upload/worker/UploadWorker.kt#L299), and this is where the succes or failure of the upload attempt is determined. This information is then stored in the [Contribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/Contribution.kt) object which contains all the context and information about the picture. Currently the only info about the upload status stored in Contribution is whether it succeeded, is paused or failed.
 
 #### Scope
 
-The scope of this issue is a bit difficult to predetermine as the upload functionality is spread out over more than 50 files, meaning that getting an overview of how it works is a significant task in it self.
+Ascertaining the scope of this issue was a somewhat difficult task with the size of the code base. But at its most basic the scope of this issue boils down to 2 requirements. Passing on the reason for why an upload failed to the retryUpload function, and there determining if said failure reason qualifies as a genuine failure. However this last step is challenging as determining which failure reasons are genuine requires us to determine what failures and exceptions can even be thrown, meaning we need to reproduce any number of errors.
 
 #### Requirements
 
-- Change behaviour of [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669) to stop if reason for failure won't change (like invalid filepath).
+The actual requirements for this issue then is quite simple:
 
-- This require us to have information on why the attempted failed at retryUpload, maybe through changing adding a value to [Contribution.state](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/Contribution.kt#L96) for genuine failure, or maybe we can use the field [hasInvalidLocation](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/Contribution.kt#L45) though this will only cover this specific case. Also we should really avoid changing contribution if we can avoid it as they store this object in a DB.
+- Change behaviour of [uploadContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/8c63d74beed20d785d7789f1fea571f9ab164368/app/src/main/java/fr/free/nrw/commons/upload/worker/UploadWorker.kt#L299) to pass on failure reasons
 
-- This the requires us to determine and save why the attempt failed, start looking in [contributionsPresenter.saveContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/39f624a1d3d289f81305509c1e8e09db86c2ccf4/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsPresenter.java#L69).
+- Use said failure reasons to determine if the failure is a genuine one in [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669).
 
-- Finally we need documentation of any thing we do, JavaDocs and maybe in https://github.com/commons-app/commons-app-documentation, but that might be outdated. And unit tests of this functionality.
+- Good to have but not strictly necessary: We should tell the user about why the upload failed, either if it is a genuine failure or if it has just timed out
 
-## Requirements for the new feature or requirements affected by functionality being refactored
+#### Work plan
 
-Optional (point 3): trace tests to requirements.
+Our plan to implement this is as follows:
+
+1. Add fields to the Contribution class describing failure reason and/or failure exception
+2. At all failure points in [uploadContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/8c63d74beed20d785d7789f1fea571f9ab164368/app/src/main/java/fr/free/nrw/commons/upload/worker/UploadWorker.kt#L299) set said fields
+3. In [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669) create a function which determines if a failure is a genuine one
+
+   - Our plan is to do this as a white list where we determine some patterns of failures and/or exceptions which should be considered a genuine failure, and if the failure reason doesn't match this list then we fall back on the current behaviour of just retrying 10 times.
+   - The biggest challenge here is to determine the kind of patterns which should constitute genuine failures. Especially as we are having trouble even reproducing the example error for this issue (invalid filename).
+
+4. Use said function to determine if a upload should be reattempted.
+5. Inform the user about the status of their failed upload
 
 ## Code changes
 
