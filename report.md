@@ -221,20 +221,20 @@ you took care of and where you spent your time, if that time exceeds
 
 1. plenary discussions/meetings
 
-   **0.5 hours** - Start up meeting
+   **0.5 hours** Start up meeting
 
-   **1 hour** - Issue selection meeting
+   **1 hour** Issue selection meeting
 
-   **1 hour** - Reevaluating our issue choice after consultation with Cyrille and finding a new one
+   **1 hour** Reevaluating our issue choice after consultation with Cyrille and finding a new one
 
-   **0.5 hours** - Project plan meeting for issue #5284
+   **0.5 hours** Project plan meeting for issue #5284
 
-   **0.5 hours** - meeting for issue #5284 and further discussion
+   **0.5 hours** meeting for issue #5284 and further discussion
 
 
 2. discussions within parts of the group
 
-   **0.5 hours** - syncing
+   **0.5 hours** syncing
 
 3. reading documentation
 
@@ -262,7 +262,7 @@ you took care of and where you spent your time, if that time exceeds
    
    **0.5 hours** peer programming with Jonatan
 
-   **1 hours** writing proper solution for issue #5284
+   **1 hour** writing proper solution for issue #5284
 
 
 8. running code?
@@ -342,6 +342,26 @@ Our plan to implement this is as follows:
 5. Inform the user about the status of their failed upload
 
 ## Code changes
+
+To change the code according according to the work plan, we had to change three different files. The solution for this can be found on this [branch](https://github.com/DD2480-group8-VT24/apps-android-commons/tree/issue-5284_Prevent_retries_for_genuinely_failed_uploads).
+
+1. [Contribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/Contribution.kt#L22)
+
+To update the contribution class, we have created two different variables. The first one, [errorMessage](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/Contribution.kt#L32C30-L32C31), makes certain that we can save custom error messages to a field in the contribution. The second change correlates to the variable [exceptionMessage](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/Contribution.kt#L33C9-L33C25) which will store the exception as a string. Both of these variables are set to null in the beginning to ensure a genunine error analysis.
+
+2. [UploadContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/8c63d74beed20d785d7789f1fea571f9ab164368/app/src/main/java/fr/free/nrw/commons/upload/worker/UploadWorker.kt#L299)
+
+This function had to be changed more severely by using the existing contribution object and updating the errorMessage and expectionMessage accordingly. Starting by setting 
+
+3. [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L677)
+
+In [this function](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L687), we check, before retrying the upload, whether the mistake was genuine or not. When it was a genuine failure, we do not try to reupload. For that, we call a new function called [isGenuineError](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L713).
+
+These arrays [STASH_ERROR_CODES](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L121) and [STASH_EXCEPTIONS](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L121) simply store the different types of error codes to be then used later on.
+
+The function [isGenuineError](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L713) compares the errorMessage to the errorCodes and the expetionMessage to its counterpart of stashed exceptions.
+
+5. It should then tell the user what actually happened in the code by modifying the error message that will be send in [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L677).
 
 ### Patch
 
