@@ -75,6 +75,8 @@ you took care of and where you spent your time, if that time exceeds
 
    **0.5 hours** - Stand up meeting
 
+   **0.5 hours** - Syncing meeting infor presentation
+
 2. discussions within parts of the group;
 
    **0.5 hours** - syncing
@@ -119,9 +121,11 @@ you took care of and where you spent your time, if that time exceeds
 
    **1 hour** - Refactoring and writing description of issue #5284
 
+   **1 hour** - Writing essence standard evaluation and finishing issue description.
+
 **0.5 hours** - project plan
 
-#### Total: 20 hours
+#### Total: 21.5 hours
 
 ### Atheer Salilm
 
