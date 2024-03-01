@@ -31,6 +31,13 @@ the app was great and straight forward. There was one problem in which one was r
 specific folder (we still don't know why) but the good thing was that this [issue](https://github.com/commons-app/apps-android-commons/issues/5571)
 was brought up in GitHub which made it possible for us to find the solution.
 
+One issue that was common among the team was that the test results seemed to differ depending on the environment, 
+those that had Windows machines seemed to get between 200~300 failing test cases in total but one team member who 
+has a Mac OS environment across all tests has only 5 failing tests. This is weird, we didn't try to resolve or 
+find out why the test results differ between environments. All of the testing logs that we refer to were run on the same environment 
+and the same machine.
+
+
 ## Effort spent
 
 For each team member, how much time was spent in
