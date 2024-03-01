@@ -395,9 +395,16 @@ refactoring).
 
 ### Key changes/classes affected
 
+Before the changes to the code:
+
 ![alt text](https://raw.githubusercontent.com/DD2480-group8-VT24/apps-android-commons/main/uml_before.png)
 
-Optional (point 2): relation to design pattern(s).
+After the changes to the code:
+
+![alt text](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/main/uml_after.png?raw=true)
+
+
+
 
 ## Overall experience
 
