@@ -224,6 +224,32 @@ you took care of and where you spent your time, if that time exceeds
 
 #### total hours: 21.6
 
+### Mert Demirsü
+
+1. plenary discussions/meetings
+
+   **0.5 hours** Start up meeting
+
+   **1 hour** Issue selection meeting
+
+2. discussions within parts of the group
+
+   **1 hours** General Discussion
+
+3. configuration and setup
+
+   **1 hour** Downloading and installing Android Studios, Gradle and setting it up to run the tests with.
+
+4. analyzing code/output
+
+   **2 hour** trying to understand the test cases for issue #5284 and how to implement working tests for our implemented code (With Melissa):
+
+5. running and testing code
+
+   **1 hour** running the tests with coverage in order to plan for further implementation of our own (With Melissa):
+
+#### Total hours: 6.5
+
 ### Melissa Mazura
 
 0. preliminary issue and project search
