@@ -289,6 +289,8 @@ you took care of and where you spent your time, if that time exceeds
 
    **2 hour** understanding the test suites and the current test state with Mert
 
+   **1.5 hours** working on the problem of the test suites with Mert
+
 6. writing documentation
 
    **1 hour** writing my own part and add the technical part for issue #5284
@@ -311,7 +313,7 @@ you took care of and where you spent your time, if that time exceeds
 
    **1 hour** checking test cases and their coverage for our function with Mert
 
-#### Total: 18.5 hours
+#### Total: 20 hours
 
 ## Overview of issue(s) and work done.
 
