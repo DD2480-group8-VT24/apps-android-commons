@@ -31,12 +31,11 @@ the app was great and straight forward. There was one problem in which one was r
 specific folder (we still don't know why) but the good thing was that this [issue](https://github.com/commons-app/apps-android-commons/issues/5571)
 was brought up in GitHub which made it possible for us to find the solution.
 
-One issue that was common among the team was that the test results seemed to differ depending on the environment, 
-those that had Windows machines seemed to get between 200~300 failing test cases in total but one team member who 
-has a Mac OS environment across all tests has only 5 failing tests. This is weird, we didn't try to resolve or 
-find out why the test results differ between environments. All of the testing logs that we refer to were run on the same environment 
+One issue that was common among the team was that the test results seemed to differ depending on the environment,
+those that had Windows machines seemed to get between 200~300 failing test cases in total but one team member who
+has a Mac OS environment across all tests has only 5 failing tests. This is weird, we didn't try to resolve or
+find out why the test results differ between environments. All of the testing logs that we refer to were run on the same environment
 and the same machine.
-
 
 ## Effort spent
 
@@ -166,11 +165,11 @@ you took care of and where you spent your time, if that time exceeds
 
    **0.5** hours - meeting infor the presentation
 
-3. discussions within parts of the group;
+2. discussions within parts of the group;
 
    **0.5** hours - syncing
 
-4. reading documentation;
+3. reading documentation;
 
    **1** hours - reading documentation for the issue #3463 and looking up how assertThat works and how
    they differ from Junit asserts.
@@ -182,12 +181,12 @@ you took care of and where you spent your time, if that time exceeds
    **1** hours - reading documentation and code for issue #5284, this also includes reading documentation on
    how to run the different flavours i.e builds of the app.
 
-5. configuration and setup;
+4. configuration and setup;
 
    **1** hours - installation of android studio & gradle, and setting up the project
    to be able to run the app and run the full test suite and saving the results.
 
-6. analyzing code/output;
+5. analyzing code/output;
 
    **0.8** hours - understanding the current testing code structure for the issue #3463
 
@@ -197,7 +196,7 @@ you took care of and where you spent your time, if that time exceeds
    the goal was figure out how to write test to test the added functionality for the issue, thus this included understanding how their current test suite works, how they write their test.
    This also includes reading documentation for mockito and how it's used since the project uses it a lot in their tests.
 
-7. writing documentation;
+6. writing documentation;
 
    **0.6** hours - documentation of the onboarding experience for the project
 
@@ -205,14 +204,14 @@ you took care of and where you spent your time, if that time exceeds
 
    **1** hours - improve the documentation of issue #3463 in the report
 
-9. writing code;
+7. writing code;
 
    **2** hours - Rewriting all of the assert for the entire test suite using the commands which is linked
    below. Here also time was spent on adding the required imports for the tests and removing the ones no longer
    used. This also includes creating the final command (shown further below) and testing that it
    works commands that it works and the output is correct.
 
-10. running code?
+8. running code?
 
    **1** hours - running all of the tests and making sure that they work in the exact same way as before.
    This work also includes changing back some of the test because that failed because of the rewrite.
@@ -268,7 +267,6 @@ you took care of and where you spent your time, if that time exceeds
 
    **0.5 hours** meeting for issue #5284 and further discussion
 
-
 2. discussions within parts of the group
 
    **0.5 hours** syncing
@@ -300,7 +298,7 @@ you took care of and where you spent your time, if that time exceeds
 7. writing code
 
    **0.5 hours** writing first solution for issue #5284
-   
+
    **0.5 hours** peer programming with Jonatan
 
    **1 hour** writing proper solution for issue #5284
@@ -312,7 +310,6 @@ you took care of and where you spent your time, if that time exceeds
    **1 hour** running the tests again to see whether the build fails; trying to check if the function fails in its current state or not
 
    **1 hour** checking test cases and their coverage for our function with Mert
-
 
 #### Total: 18.5 hours
 
@@ -334,25 +331,28 @@ This issue essentially affects all of the existing test cases since the entire t
 to use assertThat. Furthermore, the scope of this issue is both very extensive, as the project has ~1500 tests,
 and quite limited as most of the test cases use the same assert patterns which can be automatically
 rewritten to appropriate assertThat statements with the help of regular expression (more about this below).
+
 #### Requirements
 
-The requirements for this issue is very straight forward 
+The requirements for this issue is very straight forward
 
 ##### requirement 1
 
 ###### Title: refactor test suite to use assertThat statements
 
 ###### Description
-   - refactor the existing Junit assert statements to appropriate assertThat statements for a given test case
-   - do the above step for the entire test suite
+
+- refactor the existing Junit assert statements to appropriate assertThat statements for a given test case
+- do the above step for the entire test suite
 
 ##### requirement 2
 
 ###### Title: a succeeding test before refactor should still succeed after refactor
 
 ###### Description
-   - After a test case has been rewritten using a appropriate assertThat statements if the test case 
-   succeeded before the rewrite then it has also to succeed after the rewrite.
+
+- After a test case has been rewritten using a appropriate assertThat statements if the test case
+  succeeded before the rewrite then it has also to succeed after the rewrite.
 
 #### work plan
 
@@ -388,23 +388,23 @@ find . -name '*.kt' | xargs grep -l 'assertFalse' | xargs sed -i '' -e 's/assert
 
 ##### Explanation of the command
 
-```find``` - this command was used to find all files that ended with .kt which is used to denote
+`find` - this command was used to find all files that ended with .kt which is used to denote
 kotlin files, which is where the test cases resided.
 
-```xargs``` - this is a general command that was used to help read the output of the previous command
+`xargs` - this is a general command that was used to help read the output of the previous command
 
-```grep``` - this command was used to find the lines of code that contained the first part of the assert pattern
+`grep` - this command was used to find the lines of code that contained the first part of the assert pattern
 
-```sed``` - this was the command that was used to read in and pattern match for a pattern that will
+`sed` - this was the command that was used to read in and pattern match for a pattern that will
 be replaced with a corresponding appropriate assertThat using regular expression.
 
 #### code changes
 
-The code was changed using the command shown previously and since the different assert patterns was few 
-this made it possible to refactor the majority of the test to use assertThat statements. To note there 
-are few test cases that still Junit assert statements and the reason for this is that the automatic rewrite 
-made those test cases fail when they actually succeeded before the rewrite and as Cyrille requested 
-no time was allocated for solving those.  
+The code was changed using the command shown previously and since the different assert patterns was few
+this made it possible to refactor the majority of the test to use assertThat statements. To note there
+are few test cases that still Junit assert statements and the reason for this is that the automatic rewrite
+made those test cases fail when they actually succeeded before the rewrite and as Cyrille requested
+no time was allocated for solving those.
 
 The entire code that was changed can be viewed using the following [PR](https://github.com/commons-app/apps-android-commons/pull/5574) which was submitted to the repo.
 
@@ -426,11 +426,17 @@ Ascertaining the scope of this issue was a somewhat difficult task with the size
 
 The actual requirements for this issue then is quite simple:
 
-- Change behaviour of [uploadContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/8c63d74beed20d785d7789f1fea571f9ab164368/app/src/main/java/fr/free/nrw/commons/upload/worker/UploadWorker.kt#L299) to pass on failure reasons
+##### Requirement 2.1: Failure identification
 
-- Use said failure reasons to determine if the failure is a genuine one in [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669).
+Change behaviour of [uploadContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/8c63d74beed20d785d7789f1fea571f9ab164368/app/src/main/java/fr/free/nrw/commons/upload/worker/UploadWorker.kt#L299) to pass on failure reasons
 
-- Good to have but not strictly necessary: We should tell the user about why the upload failed, either if it is a genuine failure or if it has just timed out
+##### Requirement 2.2: Failure classification
+
+Use said failure reasons to determine if the failure is a genuine one in [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/baa6ddc21b68ebac06a93964c4fa45972367bed0/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L669).
+
+##### Requirement 2.3: User notification (somewhat optional)
+
+Good to have but not strictly necessary: We should tell the user about why the upload failed, either if it is a genuine failure or if it has just timed out
 
 #### Work plan
 
@@ -456,7 +462,7 @@ To change the code according according to the work plan, we had to change three 
 
 2. [UploadContribution](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/8c63d74beed20d785d7789f1fea571f9ab164368/app/src/main/java/fr/free/nrw/commons/upload/worker/UploadWorker.kt#L299)
 
-   This function had to be changed more severely by using the existing contribution object and updating the errorMessage and expectionMessage accordingly. Starting by setting 
+   This function had to be changed more severely by using the existing contribution object and updating the errorMessage and expectionMessage accordingly. Starting by setting
 
 3. [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L677)
 
@@ -466,7 +472,7 @@ To change the code according according to the work plan, we had to change three 
 
    The function [isGenuineError](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L713) compares the errorMessage to the errorCodes and the expetionMessage to its counterpart of stashed exceptions.
 
-5. It should then tell the user what actually happened in the code by modifying the error message that will be send in [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L677).
+4. It should then tell the user what actually happened in the code by modifying the error message that will be send in [retryUpload](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/d75c3a6086b3f9f6ef035a2b69cedb889a0756dd/app/src/main/java/fr/free/nrw/commons/contributions/ContributionsFragment.java#L677).
 
 ### Patch
 
@@ -501,16 +507,13 @@ After the changes to the code:
 
 ![alt text](https://github.com/DD2480-group8-VT24/apps-android-commons/blob/main/uml_after.png?raw=true)
 
-
-
-
 ## Overall experience
 
 What are your main take-aways from this project? What did you learn?
 
 **Jonatan Tuvstedt** - My main take away from this project is that trying to get to grips with a large code base as a group is very hard. I have previous experience with digging in into a large unknown code base, but only on my own. Trying to sync this effort to avoid everyone having to duplicate the same work in understanding how the code base works and where our issue fits into this is very difficult. On the one hand everyone will need to get to grips with the general code layout to be able to understand the problem, but on the other hand not everyone needs to dig into the nitty gritty of every part. Determining where that line lies and how to best sync what we have learned has probably been the biggest challenge, but is also a very important take away.
 
-**Melissa Mazura** - My experience is that working on this type of project is very hard. I was not expecting it to be so difficult to try and find out what the reason for this failure is and how to solve for it. Additionally, working as a group proved to be rather difficult too for such a task, as it is fairly difficult to separate tasks effectively. I also conclude that trying to understand someone else's code can be very difficult, as well as finding the spot in the code that needs to be changed and analysed for an effective test case that can be used. Additionally, I am not very well versed in Java, which proved to be a small problem when trying to analyse the code and error handling as a whole. But I think that I really learned how to work thorugh a code base from someone else and how to find the spots that will be needed to be changed to solve a problem. It has also taught me that working in a team requires a lot of times where people will have to do the same task (like running the app or finding the error in the code) for it to be successful in the end.  
+**Melissa Mazura** - My experience is that working on this type of project is very hard. I was not expecting it to be so difficult to try and find out what the reason for this failure is and how to solve for it. Additionally, working as a group proved to be rather difficult too for such a task, as it is fairly difficult to separate tasks effectively. I also conclude that trying to understand someone else's code can be very difficult, as well as finding the spot in the code that needs to be changed and analysed for an effective test case that can be used. Additionally, I am not very well versed in Java, which proved to be a small problem when trying to analyse the code and error handling as a whole. But I think that I really learned how to work thorugh a code base from someone else and how to find the spots that will be needed to be changed to solve a problem. It has also taught me that working in a team requires a lot of times where people will have to do the same task (like running the app or finding the error in the code) for it to be successful in the end.
 
 ### Essence standard
 
