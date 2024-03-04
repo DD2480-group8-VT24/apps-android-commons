@@ -209,23 +209,30 @@ and the same machine.
 
    **1 hour** Issue selection meeting
 
-2. discussions within parts of the group
+   **0.5 hours** - Preparation for standup meeting and issues
+
+   **0.5 hours** - Syncing for issues
+
+3. discussions within parts of the group
 
    **1 hours** General Discussion
 
-3. configuration and setup
+4. configuration and setup
 
    **1 hour** Downloading and installing Android Studios, Gradle and setting it up to run the tests with.
 
-4. analyzing code/output
+5. analyzing code/output
 
    **2 hour** trying to understand the test cases for issue #5284 and how to implement working tests for our implemented code (With Melissa):
 
-5. running and testing code
+6. running and testing code
 
    **1 hour** running the tests with coverage in order to plan for further implementation of our own (With Melissa):
+   **1 hour** checking test cases and their coverage for our function with Melissa
+   **2 hour** further trying to fix the "update" test cases by but with no success, rollbacked all edits.
 
-#### Total hours: 6.5
+
+#### Total hours: 9.5
 
 ### Melissa Mazura
 
