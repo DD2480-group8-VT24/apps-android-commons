@@ -508,9 +508,8 @@ To change the code according according to the work plan, we had to change three 
 
 ### Patch
 
-(copy your changes or the add git command to show them)
-
-git diff ...
+#### Issue #5284
+git diff develop issue-5284_Prevent_retries_for_genuinely_failed_uploads
 
 Optional (point 4): the patch is clean.
 
