@@ -39,28 +39,6 @@ and the same machine.
 
 ## Effort spent
 
-For each team member, how much time was spent in
-
-1. plenary discussions/meetings;
-
-2. discussions within parts of the group;
-
-3. reading documentation;
-
-4. configuration and setup;
-
-5. analyzing code/output;
-
-6. writing documentation;
-
-7. writing code;
-
-8. running code?
-
-For setting up tools and libraries (step 4), enumerate all dependencies
-you took care of and where you spent your time, if that time exceeds
-30 minutes.
-
 ### Jonatan Tuvstedt
 
 0. preliminary issue and project search
@@ -315,6 +293,58 @@ you took care of and where you spent your time, if that time exceeds
 
 #### Total: 20 hours
 
+### Marcus Odin
+
+For each team member, how much time was spent in
+0. issue and project search;
+   **2 hour** Spent finding a decent issue and project to have as an alternative.
+
+1. plenary discussions/meetings;
+   **0.5 hours** - Start up meeting.
+
+   **1 hour** - Issue selection meeting.
+
+   **1 hour** - Reevaluating our issue choice after consultation with Cyrille and finding a new one.
+
+   **0.5 hours** - Project plan meeting for issue #5284.
+
+   **0.5 hours** - Stand up meeting.
+
+   **0.5 hours** - Syncing meeting infor presentation.
+   
+2. discussions within parts of the group;
+
+   **0.5 hours** - Syncing.
+
+3. reading documentation;
+
+   **2 hours** - Reading up on how to set-up and contribute to project, following coding guidelines and such.
+
+   **1 hour** - Reading documentation related to issue #5284.
+
+4. configuration and setup;
+
+   **2 hours** - Configuration and setup took extra time since I had an older verision of android studio which gave a weird error which took time to figure out.
+
+5. analyzing code/output;
+
+   **1 hour** - Finding the code that is potentially related to issue #5284.
+   **2 hour** - Analyzing code that is related to issue #5284, why uploading fails, what makes it retry, etc.
+
+6. writing documentation;
+
+   **0.5 hour** - Writing report.
+
+7. writing code;
+
+   **1 hour** - Trying to make tests for a function with 0 coverage which was harder than expected.
+
+8. running code?
+
+    **2 hours** - trying to reproduce issue #5284 without much success.
+
+#### Total: 16 hours (thus far)
+
 ## Overview of issue(s) and work done.
 
 ### Issue #3463: Remove usages of assert
@@ -518,6 +548,8 @@ What are your main take-aways from this project? What did you learn?
 **Melissa Mazura** - My experience is that working on this type of project is very hard. I was not expecting it to be so difficult to try and find out what the reason for this failure is and how to solve for it. Additionally, working as a group proved to be rather difficult too for such a task, as it is fairly difficult to separate tasks effectively. I also conclude that trying to understand someone else's code can be very difficult, as well as finding the spot in the code that needs to be changed and analysed for an effective test case that can be used. Additionally, I am not very well versed in Java, which proved to be a small problem when trying to analyse the code and error handling as a whole. But I think that I really learned how to work thorugh a code base from someone else and how to find the spots that will be needed to be changed to solve a problem. It has also taught me that working in a team requires a lot of times where people will have to do the same task (like running the app or finding the error in the code) for it to be successful in the end.
 
 **Atheer Salim** - I have learnt that working on an open-source project can be fun, engaging, and rewarding but foremost also quite hard especially if the project is large. The project that we chose has a large code base whilst still just being a single Android app. It has been quite difficult to get an overall understanding of the whole project, how it's divided and what piece of code does what. I have learnt that we should limit ourselves to the issue we are trying to solve since if you want to learn everything about the project, it's not going to work and most likely not needed even. Still, it has not been impossible to tackle the issue, however, some amount of time will have to go to getting started and getting to grips with the necessary details. I have learnt that with our current knowledge, we are very capable of helping solve/contribute to open-source projects.
+
+**Marcus Odin** - I have learnt and gotten better at understanding other peoples code and looking through and analyzing large amounts of code. To understand well documented code took a long time and was not always easy, this made me realize that it is even more how important it is to write easy to read and well documented code. Working as a group of 5 on a workload that is not very easy to parallelize mean that quite a bit of time was spent on dividing work and discussions around such matter. Setting up the project and getting it to run took a long time for me since I got an error from my android studio verision being too old but the error message did not make this obvious so I spent a long time figuring that out and fixing it. Other than that android studio takes a long time to compile and run projects and tests so trying code or trying to reproduce bugs took a lot of time just waiting for it to run. The time ran out very fast from trying to understand the code, reading documentation and just get the minimal amount of understanding to start on the issue.
 
 ### Essence standard
 
