@@ -508,12 +508,11 @@ To change the code according according to the work plan, we had to change three 
 
 ### Patch
 
+#### Issue #3463
+`git diff 55346c125b9fa3054ea2c9485ea616bb936bb593 61dc7089d1544047408becc6ed2204e4d237067d`
+
 #### Issue #5284
-git diff develop issue-5284_Prevent_retries_for_genuinely_failed_uploads
-
-Optional (point 4): the patch is clean.
-
-Optional (point 5): considered for acceptance (passes all automated checks).
+`git diff develop issue-5284_Prevent_retries_for_genuinely_failed_uploads`
 
 ## Test results
 
