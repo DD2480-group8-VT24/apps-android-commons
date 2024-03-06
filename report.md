@@ -304,9 +304,11 @@ and the same machine.
 
 For each team member, how much time was spent in
 0. issue and project search;
+
    **2 hour** Spent finding a decent issue and project to have as an alternative.
 
 1. plenary discussions/meetings;
+2. 
    **0.5 hours** - Start up meeting.
 
    **1 hour** - Issue selection meeting.
@@ -319,34 +321,35 @@ For each team member, how much time was spent in
 
    **0.5 hours** - Syncing meeting infor presentation.
    
-2. discussions within parts of the group;
+3. discussions within parts of the group;
 
    **0.5 hours** - Syncing.
 
-3. reading documentation;
+4. reading documentation;
 
    **2 hours** - Reading up on how to set-up and contribute to project, following coding guidelines and such.
 
    **1 hour** - Reading documentation related to issue #5284.
 
-4. configuration and setup;
+5. configuration and setup;
 
    **2 hours** - Configuration and setup took extra time since I had an older verision of android studio which gave a weird error which took time to figure out.
 
-5. analyzing code/output;
+6. analyzing code/output;
 
    **1 hour** - Finding the code that is potentially related to issue #5284.
+   
    **2 hour** - Analyzing code that is related to issue #5284, why uploading fails, what makes it retry, etc.
 
-6. writing documentation;
+8. writing documentation;
 
    **0.5 hour** - Writing report.
 
-7. writing code;
+9. writing code;
 
    **1 hour** - Trying to make tests for a function with 0 coverage which was harder than expected.
 
-8. running code?
+10. running code?
 
     **2 hours** - trying to reproduce issue #5284 without much success.
 
