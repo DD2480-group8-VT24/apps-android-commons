@@ -302,7 +302,6 @@ and the same machine.
 
 ### Marcus Odin
 
-For each team member, how much time was spent in
 0. issue and project search;
 
    **2 hour** Spent finding a decent issue and project to have as an alternative.
