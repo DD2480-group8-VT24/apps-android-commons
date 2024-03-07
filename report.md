@@ -340,19 +340,21 @@ and the same machine.
    
    **2 hour** - Analyzing code that is related to issue #5284, why uploading fails, what makes it retry, etc.
 
-6. writing documentation;
+   **2 hour** - Trying to reproduce issue #5284 without any success.
+
+7. writing documentation;
 
    **0.5 hour** - Writing report.
 
-7. writing code;
+8. writing code;
 
    **1 hour** - Trying to make tests for a function with 0 coverage which was harder than expected.
 
-8. running code?
+9. running code?
 
     **2 hours** - trying to reproduce issue #5284 without much success.
 
-#### Total: 16 hours (thus far)
+#### Total: 20 hours
 
 ## Overview of issue(s) and work done.
 
