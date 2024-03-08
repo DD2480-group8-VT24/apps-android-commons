@@ -230,6 +230,7 @@ and the same machine.
    **1 hour** running the tests with coverage in order to plan for further implementation of our own (With Melissa):
    **1 hour** checking test cases and their coverage for our function with Melissa
    **2 hour** further trying to fix the "update" test cases by but with no success, rollbacked all edits.
+   
 
 
 #### Total hours: 9.5
