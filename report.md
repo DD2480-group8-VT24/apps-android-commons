@@ -213,13 +213,20 @@ and the same machine.
 
    **0.5 hours** - Syncing for issues
 
-3. discussions within parts of the group
+2. discussions within parts of the group
 
    **1 hours** General Discussion
+
+3. Reading documentation
+
+   **2 hours** - Reading documentation related to the project and instructions
+
+   **1 hour** - Further reading into documentation related to issue #5284.
 
 4. configuration and setup
 
    **1 hour** Downloading and installing Android Studios, Gradle and setting it up to run the tests with.
+   **2 hours** - Reading up on how to set-up and contribute to project, following coding guidelines and such.
 
 5. analyzing code/output
 
@@ -227,13 +234,15 @@ and the same machine.
 
 6. running and testing code
 
-   **1 hour** running the tests with coverage in order to plan for further implementation of our own (With Melissa):
+   **1.5 hour** running the tests with coverage in order to plan for further implementation of our own (With Melissa):
    **1 hour** checking test cases and their coverage for our function with Melissa
    **2 hour** further trying to fix the "update" test cases by but with no success, rollbacked all edits.
-   
+   **4 hour** Code edits in order to force a green coverage run with no succes until giving up and reverting.
 
+7. final touch and wrapping up
+   **1 hour** mostly rollbacking everything, preparing the documentation for drafting and wrapping everything up related to issue #5284
 
-#### Total hours: 9.5
+#### Total hours: 20
 
 ### Melissa Mazura
 
